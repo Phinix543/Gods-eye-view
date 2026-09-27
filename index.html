@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GOD EYE VIEW</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/cesium@1.134/Build/Cesium/Cesium.js"></script>
+<link href="https://unpkg.com/cesium@1.134/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+<div id="cesiumContainer"></div>
+<div class="scanlines"></div>
+<header class="topbar">
+  <div class="brand"><span class="dot"></span> GOD EYE <b>VIEW</b></div>
+  <div class="status"><span class="live">● LIVE</span><span id="clock">--:--:--</span><span>GLOBAL MONITOR</span></div>
+</header>
+
+<aside class="left">
+  <div class="panel">
+    <div class="panel-title">LIVE LAYERS</div>
+    <label><input type="checkbox" checked data-layer="traffic"> VEHICLES</label>
+    <label><input type="checkbox" checked data-layer="aircraft"> AIRCRAFT</label>
+    <label><input type="checkbox" checked data-layer="ships"> VESSELS</label>
+    <label><input type="checkbox" checked data-layer="events"> EVENTS</label>
+    <label><input type="checkbox" checked data-layer="cctv"> PUBLIC CCTV</label>
+  </div>
+  <div class="panel">
+    <div class="panel-title">SYSTEM</div>
+    <div class="metric"><span>DATA STATUS</span><strong class="green">ONLINE</strong></div>
+    <div class="metric"><span>UPDATE</span><strong>LIVE FEED</strong></div>
+    <div class="metric"><span>OBJECTS</span><strong id="objectCount">12</strong></div>
+  </div>
+</aside>
+
+<main class="center">
+  <div class="reticle"><i></i></div>
+  <div class="hint">DRAG TO ROTATE · SCROLL TO ZOOM · CLICK OBJECT</div>
+</main>
+
+<aside class="right">
+  <div class="panel">
+    <div class="panel-title">SELECTED OBJECT</div>
+    <div id="selected">
+      <div class="empty">No object selected<br><small>Select a marker on the globe.</small></div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-title">EVENT STREAM</div>
+    <div id="events">
+      <div><b>LIVE</b> Global data channel ready</div>
+      <div><b>INFO</b> Public-source monitoring mode</div>
+      <div><b>SYS</b> Globe synchronization active</div>
+    </div>
+  </div>
+</aside>
+
+<footer>
+  <span>GOD EYE VIEW v1.0</span>
+  <span>PUBLIC DATA / DEMO MODE</span>
+  <span>UTC <span id="utc">--:--:--</span></span>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
